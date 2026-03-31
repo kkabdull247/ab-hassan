@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB Hassan Associates & Builders | Elite Real Estate Pakistan</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --brand-blue: #0d2c54;
+            --brand-green: #00a651;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3,
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        /* --- STICKY NAVIGATION --- */
+        /* CSS to keep it small */
+    .navbar-dark .nav-link {
+        color: #ffffff !important;
+        transition: 0.2s;
+        line-height: 2; /* Reduces vertical height of links */
+    }
+
+    .navbar-dark .nav-link:hover {
+        color: #00a651 !important;
+    }
+
+    .navbar-brand span {
+        letter-spacing: -0.5px;
+    }
+
+    @media (max-width: 991px) {
+        .navbar-nav {
+            padding: 10px 0;
+            background: #0d2c54;
+        }
+    }
+        /* --- RESPONSIVE HERO SECTION --- */
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: var(--brand-blue);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-image-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=1200') center/cover;
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        /* --- PROPERTY CARDS --- */
+        .prop-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: 0.4s;
+            background: white;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .prop-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .prop-img {
+            height: 240px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .price-badge {
+            background: var(--brand-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        /* --- CEO & STORY SECTION --- */
+        .ceo-section {
+            background: var(--light-bg);
+            border-radius: 30px;
+            padding: 60px;
+        }
+
+        .ceo-img {
+            border-radius: 20px;
+            border: 10px solid var(--white);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        /* --- TEAM CAROUSEL --- */
+        .team-card {
+            cursor: pointer;
+            padding: 20px;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .team-circle {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            border: 4px solid var(--brand-green);
+            overflow: hidden;
+        }
+
+        .team-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- FOOTER --- */
+        .main-footer {
+            background: #081a31;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 80px 0 20px;
+        }
+
+        .footer-title {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--brand-green);
+            padding-left: 5px;
+        }
+
+        /* --- RESPONSIVE FIXES --- */
+        @media (max-width: 991px) {
+            .hero-image-bg {
+                width: 100%;
+                opacity: 0.3;
+                clip-path: none;
+            }
+
+            .hero-section {
+                text-align: center;
+            }
+
+            .ceo-section {
+                padding: 30px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="top-bar py-1" style="background-color: #00a651; font-size: 0.75rem;">
+    <div class="container d-flex justify-content-between align-items-center text-white">
+        <div class="d-none d-md-flex gap-3" style="font-size: 1rem;">
+            <span><i class="fas fa-phone-alt me-1"></i> 0321 3333710</span>
+            <span><i class="fab fa-whatsapp me-1"></i> 0321 3333710</span>
+            <span><i class="fas fa-envelope me-1"></i> info@abhassan.com</span>
+        </div>
+        <div class="ms-auto d-flex gap-3" style="font-size: 1rem;>
+            <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="text-white"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top py-1" style="background-color: #0d2c54; border-bottom: 2px solid #00a651;">
+    <div class="container">
+        <a class="navbar-brand fw-bold py-0" href="#" style="font-size: 1.1rem; font-family: 'Montserrat';">
+            <span style="color: #ffffff;">AB</span><span style="color: #00a651;">HASSAN</span>
+        </a>
+
+        <button class="navbar-toggler py-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#compactNav">
+            <span class="navbar-toggler-icon" style="width: 1.2em; height: 1.2em;"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="compactNav">
+            <ul class="navbar-nav ms-auto text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 0.5px;">
+                <li class="nav-item">
+                    <a class="nav-link px-3 active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="#about">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="#listings">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="#reviews">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 ms-lg-2 btn btn-success text-white py-1 rounded-pill" href="#contact" style="background-color: #00a651 !important; border: none; margin-top: 2px;">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span style="color:var(--brand-blue)">AB</span><span style="color:var(--brand-green)">HASSAN</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase small fw-bold">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Our Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#listings">Listings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-success text-white px-4 ms-lg-3 rounded-pill"
+                            href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+    <header id="home" class="hero-section">
+        <div class="hero-image-bg d-none d-lg-block"></div>
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h6 class="text-success fw-bold mb-3" style="letter-spacing: 2px;">WELCOME TO EXCELLENCE</h6>
+                    <h1 class="display-3 mb-4">Building Trust, <br>Creating <span
+                            style="color:var(--brand-green)">Legacies.</span></h1>
+                    <p class="lead mb-5">AB Hassan Associates & Builders is your premier partner for high-yield real
+                        estate investments and luxury living in Pakistan's most prestigious locations.</p>
+                    <div class="d-sm-flex gap-3">
+                        <a href="#listings" class="btn btn-success btn-lg px-5 rounded-pill mb-3">View Listings</a>
+                        <a href="#about" class="btn btn-outline-light btn-lg px-5 rounded-pill mb-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="container py-5 mt-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+                    class="img-fluid rounded-4 shadow-lg">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="display-5 mb-4">A Legacy of <span style="color:var(--brand-green)">Authenticity</span></h2>
+                <p class="text-muted">Founded over a decade ago, AB Hassan Associates & Builders emerged with a single
+                    mission: to provide transparent and secure real estate solutions in an often complex market. We
+                    don't just sell plots; we provide the foundation for families to build their dreams.</p>
+                <div class="row mt-4 g-3">
+                    <div class="col-6">
+                        <div class="p-3 border-start border-success border-4 bg-light">
+                            <h4 class="fw-bold mb-0">1000+</h4>
+                            <small class="text-muted">Properties Delivered</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3 border-start border-success border-4 bg-light">
+                            <h4 class="fw-bold mb-0">15+</h4>
+                            <small class="text-muted">Years Experience</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <div class="ceo-section">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-8">
+                    <i class="fas fa-quote-left text-success display-4 mb-3"></i>
+                    <h3 class="fw-bold mb-3">From the Desk of the CEO</h3>
+                    <p class="fst-italic lead">"In the world of real estate, your word is your most valuable asset. At
+                        AB Hassan, we prioritize our clients' peace of mind by ensuring every transaction is backed by
+                        verified documentation and ethical dealing. Our growth is a reflection of the trust our clients
+                        place in us every day."</p>
+                    <h5 class="fw-bold mt-4 mb-0">Ali Hassan</h5>
+                    <p class="text-success small fw-bold">Chief Executive Officer</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600"
+                        class="ceo-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="listings" class="py-5" style="background-color: #fcfdfd;">
+        <div class="container py-lg-5">
+            <div class="d-md-flex justify-content-between align-items-end mb-5 text-center text-md-start">
+                <div>
+                    <h6 class="text-success fw-bold text-uppercase" style="letter-spacing: 2px;">Market Opportunities
+                    </h6>
+                    <h2 class="display-5 fw-bold" style="color: #0d2c54;">Featured Properties</h2>
+                </div>
+                <div class="mt-3 mt-md-0">
+                    <button class="btn btn-outline-dark rounded-pill px-4 me-2">All Projects</button>
+                    <button class="btn btn-success rounded-pill px-4">Bahria Specials</button>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden listing-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800"
+                                class="card-img-top" style="height: 250px; object-fit: cover;" alt="Luxury Villa">
+                            <span
+                                class="badge bg-success position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">FOR
+                                SALE</span>
+                            <div class="price-overlay">PKR 4.8 Crore</div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-1" style="color: #0d2c54;">Modern Designer Villa</h5>
+                            <p class="text-muted small mb-3"><i
+                                    class="fas fa-map-marker-alt text-success me-2"></i>Precinct 10, Bahria Town Karachi
+                            </p>
+                            <div class="d-flex justify-content-between border-top pt-3 mb-3">
+                                <span class="small text-muted"><i class="fas fa-bed text-success me-1"></i> 4
+                                    Beds</span>
+                                <span class="small text-muted"><i class="fas fa-bath text-success me-1"></i> 5
+                                    Baths</span>
+                                <span class="small text-muted"><i class="fas fa-expand text-success me-1"></i> 250
+                                    Sq.Yd</span>
+                            </div>
+                            <button class="btn btn-dark w-100 rounded-pill fw-bold"
+                                onclick="openListing('Modern Designer Villa', 'Precinct 10-A, Street 4, Bahria Town Karachi', '4.8 Crore', 'This premium villa offers Italian tile flooring, a designer kitchen, and a spacious terrace overlooking the park. Prime location near the main mosque.')">VIEW
+                                DETAILS</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden listing-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800"
+                                class="card-img-top" style="height: 250px; object-fit: cover;" alt="Apartment">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill"
+                                style="background-color: #0d2c54 !important;">FOR RENT</span>
+                            <div class="price-overlay">PKR 85,000 / mo</div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-1" style="color: #0d2c54;">Executive Apartment</h5>
+                            <p class="text-muted small mb-3"><i class="fas fa-map-marker-alt text-success me-2"></i>DHA
+                                Phase 8, Karachi</p>
+                            <div class="d-flex justify-content-between border-top pt-3 mb-3">
+                                <span class="small text-muted"><i class="fas fa-bed text-success me-1"></i> 3
+                                    Beds</span>
+                                <span class="small text-muted"><i class="fas fa-bath text-success me-1"></i> 3
+                                    Baths</span>
+                                <span class="small text-muted"><i class="fas fa-building text-success me-1"></i> 5th
+                                    Floor</span>
+                            </div>
+                            <button class="btn btn-dark w-100 rounded-pill fw-bold"
+                                onclick="openListing('Executive Apartment', 'DHA Phase 8, Near Creek Club, Karachi', '85,000 Monthly', 'A fully furnished executive suite with sea views. Includes 24/7 security, standby generator, and dedicated basement parking.')">VIEW
+                                DETAILS</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden listing-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800"
+                                class="card-img-top" style="height: 250px; object-fit: cover;" alt="Commercial">
+                            <span
+                                class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">INVESTMENT</span>
+                            <div class="price-overlay">PKR 1.2 Crore</div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-1" style="color: #0d2c54;">Commercial Plot</h5>
+                            <p class="text-muted small mb-3"><i
+                                    class="fas fa-map-marker-alt text-success me-2"></i>Jinnah Avenue, BTK</p>
+                            <div class="d-flex justify-content-between border-top pt-3 mb-3">
+                                <span class="small text-muted"><i class="fas fa-chart-line text-success me-1"></i> High
+                                    ROI</span>
+                                <span class="small text-muted"><i class="fas fa-road text-success me-1"></i> Main
+                                    Road</span>
+                                <span class="small text-muted"><i class="fas fa-expand text-success me-1"></i> 133
+                                    Sq.Yd</span>
+                            </div>
+                            <button class="btn btn-dark w-100 rounded-pill fw-bold"
+                                onclick="openListing('Jinnah Avenue Commercial', 'Main Jinnah Avenue, Plot #45, Bahria Town', '1.2 Crore (Open File)', 'Prime commercial opportunity on the most expensive road in Bahria Town. Ideal for multi-story plazas or retail showrooms.')">VIEW
+                                DETAILS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="listingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow-lg">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    <div class="row g-4">
+                        <div class="col-md-5">
+                            <div id="modalImage" class="rounded-4 h-100"
+                                style="background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600') center/cover; min-height: 250px;">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h6 class="text-success fw-bold mb-1">Property Information</h6>
+                            <h3 id="modalTitle" class="fw-bold" style="color: #0d2c54;">Property Title</h3>
+                            <p id="modalLocation" class="text-muted small mb-4"><i
+                                    class="fas fa-map-marker-alt me-2"></i>Location Details</p>
+
+                            <div class="bg-light p-3 rounded-3 mb-4 d-flex justify-content-between align-items-center">
+                                <span class="text-muted">Asking Price:</span>
+                                <h4 id="modalPrice" class="fw-bold text-success mb-0">PKR 0.00</h4>
+                            </div>
+
+                            <h6 class="fw-bold mb-2">Description</h6>
+                            <p id="modalDesc" class="text-muted small mb-4">Detailed description text will go here.</p>
+
+                            <div class="d-grid gap-2">
+                                <a href="https://wa.me/923130000000" class="btn btn-success rounded-pill py-3 fw-bold">
+                                    <i class="fab fa-whatsapp me-2"></i> CONTACT AGENT FOR VISIT
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Styling Enhancements */
+        .listing-card {
+            transition: 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .listing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(13, 44, 84, 0.1) !important;
+        }
+
+        .price-overlay {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(13, 44, 84, 0.9);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .listing-card .btn-dark:hover {
+            background-color: #00a651;
+            border-color: #00a651;
+        }
+    </style>
+
+    <script>
+        function openListing(title, location, price, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalLocation').innerHTML = '<i class="fas fa-map-marker-alt me-2"></i>' + location;
+            document.getElementById('modalPrice').innerText = 'PKR ' + price;
+            document.getElementById('modalDesc').innerText = desc;
+
+            var myModal = new bootstrap.Modal(document.getElementById('listingModal'));
+            myModal.show();
+        }
+    </script>
+    <section id="team" class="py-5">
+        <div class="container text-center mb-5">
+            <h2 class="display-6">Our Expert Consultants</h2>
+            <div id="teamCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4">
+                            <div class="col-md-3 team-card"
+                                onclick="showMember('Umar Khan', 'Senior Manager', 'Ex-Bahria Consultant')">
+                                <div class="team-circle"><img
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300">
+                                </div>
+                                <h6>Umar Khan</h6>
+                                <span class="text-success small fw-bold">Manager</span>
+                            </div>
+                            <div class="col-md-3 team-card"
+                                onclick="showMember('Sara Malik', 'Investment Lead', 'DHA Market Specialist')">
+                                <div class="team-circle"><img
+                                        src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=300">
+                                </div>
+                                <h6>Sara Malik</h6>
+                                <span class="text-success small fw-bold">Expert</span>
+                            </div>
+                            <div class="col-md-3 team-card"
+                                onclick="showMember('Zubair Ahmed', 'Sales Expert', 'Clifton Portfolio Manager')">
+                                <div class="team-circle"><img
+                                        src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300">
+                                </div>
+                                <h6>Zubair Ahmed</h6>
+                                <span class="text-success small fw-bold">Consultant</span>
+                            </div>
+                            <div class="col-md-3 team-card"
+                                onclick="showMember('Ayesha Noor', 'Documentation Head', 'Legal and Verification')">
+                                <div class="team-circle"><img
+                                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300">
+                                </div>
+                                <h6>Ayesha Noor</h6>
+                                <span class="text-success small fw-bold">Legal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-5 bg-white">
+        <div class="container py-lg-5">
+            <div class="text-center mb-5">
+                <h6 class="text-success fw-bold text-uppercase" style="letter-spacing: 2px;">Testimonials</h6>
+                <h2 class="display-5 fw-bold" style="color: #0d2c54;">What Our Clients Say</h2>
+                <p class="text-muted">Trusted by thousands of investors across Pakistan.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border h-100 shadow-sm transition-hover" style="transition: 0.3s;">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic text-muted mb-4">"AB Hassan made the process of buying my first villa in
+                            Bahria Town so smooth. Their documentation is 100% transparent."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100"
+                                class="rounded-circle me-3" width="50" height="50">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Kamran Sheikh</h6>
+                                <small class="text-success">Overseas Investor</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border h-100 shadow-sm transition-hover" style="transition: 0.3s;">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic text-muted mb-4">"Best real estate consultants in Karachi. They provided me
+                            with a detailed market analysis before I invested in DHA Phase 8."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100"
+                                class="rounded-circle me-3" width="50" height="50">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Zahid Ahmed</h6>
+                                <small class="text-success">Business Owner</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border h-100 shadow-sm transition-hover" style="transition: 0.3s;">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="fst-italic text-muted mb-4">"Professional team and very honest dealing. They helped me
+                            find a great rental property in Clifton within 2 days."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100"
+                                class="rounded-circle me-3" width="50" height="50">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Sana Mirza</h6>
+                                <small class="text-success">Residential Client</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Adding a subtle hover effect for the review cards */
+        .transition-hover:hover {
+            border-color: #00a651 !important;
+            transform: translateY(-5px);
+        }
+    </style>
+
+
+    <section id="contact" class="py-5" style="background-color: #f8f9fa;">
+        <div class="container py-lg-5">
+            <div class="text-center mb-5">
+                <h6 class="text-success fw-bold text-uppercase" style="letter-spacing: 2px;">Get In Touch</h6>
+                <h2 class="display-5 fw-bold" style="color: #0d2c54;">Contact Our Experts</h2>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Full Name</label>
+                                    <input type="text" class="form-control rounded-pill px-3 py-2"
+                                        placeholder="Enter name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Phone Number</label>
+                                    <input type="tel" class="form-control rounded-pill px-3 py-2"
+                                        placeholder="+92 3XX XXXXXXX">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <label class="form-label small fw-bold">Email Address</label>
+                                    <input type="email" class="form-control rounded-pill px-3 py-2"
+                                        placeholder="email@example.com">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <label class="form-label small fw-bold">Interested In</label>
+                                    <select class="form-select rounded-pill px-3 py-2">
+                                        <option>Buying Property</option>
+                                        <option>Selling Property</option>
+                                        <option>Investment Consultation</option>
+                                        <option>Rental Services</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <label class="form-label small fw-bold">Message</label>
+                                    <textarea class="form-control rounded-4 px-3" rows="4"
+                                        placeholder="How can we help you?"></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit"
+                                        class="btn btn-success w-100 rounded-pill py-3 fw-bold shadow">SEND
+                                        ENQUIRY</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="p-4 p-md-5 rounded-4 text-white shadow-lg h-100" style="background-color: #0d2c54;">
+                        <h3 class="fw-bold mb-4">Direct Contact</h3>
+                        <p class="opacity-75 mb-5">Visit our office or call us directly for immediate assistance
+                            regarding Bahria Town or DHA projects.</p>
+
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0"><i class="fas fa-map-marker-alt fs-4 text-success"></i></div>
+                            <div class="ms-3">
+                                <h6>Head Office</h6>
+                                <p class="small opacity-75">DHA Phase 8, Commercial Avenue, Karachi</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0"><i class="fas fa-phone-alt fs-4 text-success"></i></div>
+                            <div class="ms-3">
+                                <h6>Call/WhatsApp</h6>
+                                <p class="small opacity-75">+92 313 0000000</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-5">
+                            <div class="flex-shrink-0"><i class="fas fa-envelope fs-4 text-success"></i></div>
+                            <div class="ms-3">
+                                <h6>Email Support</h6>
+                                <p class="small opacity-75">info@abhassan.com</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/923130000000" class="btn btn-outline-light w-100 rounded-pill py-2">
+                            <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid p-0 mt-5">
+        <div style="height: 450px;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115860.81640498714!2d67.0135794!3d24.8607343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44ad568778!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1710420000000!5m2!1sen!2s"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="navbar-brand text-white mb-4">AB HASSAN</h4>
+                    <p>The name of trust in Pakistan's real estate. Delivering architectural brilliance and secure
+                        investments since 2011.</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About Us</a>
+                    <a href="#listings" class="footer-link">Listings</a>
+                    <a href="#team" class="footer-link">Team</a>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="footer-title">Services</h5>
+                    <a href="#" class="footer-link">Property Sales</a>
+                    <a href="#" class="footer-link">Rental Management</a>
+                    <a href="#" class="footer-link">Investment Planning</a>
+                    <a href="#" class="footer-link">Documentation</a>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="footer-title">Contact Office</h5>
+                    <p><i class="fas fa-map-marker-alt text-success me-2"></i> DHA Phase 8, Karachi, Pakistan</p>
+                    <p><i class="fas fa-phone text-success me-2"></i> +92 313 0000000</p>
+                    <p><i class="fas fa-envelope text-success me-2"></i> info@abhassan.com</p>
+                </div>
+            </div>
+            <hr class="mt-5 border-secondary">
+            <p class="text-center small mb-0">© 2026 AB Hassan Associates & Builders. Designed for Excellence.</p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="teamModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0">
+                <div class="modal-header bg-dark text-white rounded-top-4">
+                    <h5 class="modal-title" id="modalName">Name</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center p-5">
+                    <h4 id="modalRole" class="text-success fw-bold">Role</h4>
+                    <p id="modalDesc" class="mt-3">Bio details...</p>
+                    <a href="https://wa.me/923000000000" class="btn btn-success rounded-pill px-4 mt-3">Contact via
+                        WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showMember(name, role, desc) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalRole').innerText = role;
+            document.getElementById('modalDesc').innerText = desc;
+            var myModal = new bootstrap.Modal(document.getElementById('teamModal'));
+            myModal.show();
+        }
+    </script>
+</body>
+
+</html>
